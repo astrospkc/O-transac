@@ -4,13 +4,14 @@ import { Label } from "@/components/ui/label"
 
 import { Input } from "@/components/ui/input";
 import { cn } from "@/lib/utils";
+import Link from "next/link";
 // import {
 //     IconBrandGithub,
 //     IconBrandGoogle,
 //     IconBrandOnlyfans,
 // } from "@tabler/icons-react";
 
-export default function Admin() {
+export default function Login() {
     const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
         console.log("Form submitted");
@@ -43,22 +44,29 @@ export default function Admin() {
                     <Label htmlFor="password">Password</Label>
                     <Input id="password" placeholder="••••••••" type="password" />
                 </LabelInputContainer>
-                <LabelInputContainer className="mb-8">
-                    <Label htmlFor="twitterpassword">Your twitter password</Label>
-                    <Input
-                        id="twitterpassword"
-                        placeholder="••••••••"
-                        type="twitterpassword"
-                    />
-                </LabelInputContainer>
 
-                <button
-                    className="bg-gradient-to-br relative group/btn from-black dark:from-zinc-900 dark:to-zinc-900 to-neutral-600 block dark:bg-zinc-800 w-full text-white rounded-md h-10 font-medium shadow-[0px_1px_0px_0px_#ffffff40_inset,0px_-1px_0px_0px_#ffffff40_inset] dark:shadow-[0px_1px_0px_0px_var(--zinc-800)_inset,0px_-1px_0px_0px_var(--zinc-800)_inset]"
-                    type="submit"
-                >
-                    Sign up &rarr;
-                    <BottomGradient />
-                </button>
+                <Link href={"/dashboard/customerDashboard"}>
+                    <button
+                        className="bg-gradient-to-br relative group/btn from-black dark:from-zinc-900 dark:to-zinc-900 to-neutral-600 block dark:bg-zinc-800 w-full text-white rounded-md h-10 font-medium shadow-[0px_1px_0px_0px_#ffffff40_inset,0px_-1px_0px_0px_#ffffff40_inset] dark:shadow-[0px_1px_0px_0px_var(--zinc-800)_inset,0px_-1px_0px_0px_var(--zinc-800)_inset]"
+                        type="submit"
+                    >
+                        Login &rarr;
+                        <BottomGradient />
+                    </button>
+
+                </Link>
+
+                <h1>No account</h1>
+                <Link href="/customer/signup">
+                    <button
+                        className="bg-gradient-to-br relative group/btn from-black dark:from-zinc-900 dark:to-zinc-900 to-neutral-600 block dark:bg-zinc-800 w-full text-white rounded-md h-10 font-medium shadow-[0px_1px_0px_0px_#ffffff40_inset,0px_-1px_0px_0px_#ffffff40_inset] dark:shadow-[0px_1px_0px_0px_var(--zinc-800)_inset,0px_-1px_0px_0px_var(--zinc-800)_inset]"
+                        type="submit"
+                    >
+                        Sign Up &rarr;
+                        <BottomGradient />
+                    </button>
+                </Link>
+
 
                 <div className="bg-gradient-to-r from-transparent via-neutral-300 dark:via-neutral-700 to-transparent my-8 h-[1px] w-full" />
 
