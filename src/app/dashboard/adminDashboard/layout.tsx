@@ -1,5 +1,5 @@
 
-import CustomerTaskbar from "@/components/CustomerTaskbar";
+import AdminTaskbar from "@/components/AdminTaskbar";
 
 import { ThemeProvider } from "@/components/theme-provider"
 
@@ -7,7 +7,7 @@ import { ThemeProvider } from "@/components/theme-provider"
 
 
 
-export default function CustomerLayout({
+export default function AdminLayout({
     children,
 }: Readonly<{
     children: React.ReactNode;
@@ -22,7 +22,7 @@ export default function CustomerLayout({
             >
                 <div className="flex flex-row h-screen w-screen ">
                     <div className="w-1/5">
-                        <CustomerTaskbar />
+                        <AdminTaskbar />
                     </div>
                     <div className="w-4/5">
                         {children}

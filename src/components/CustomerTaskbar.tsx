@@ -8,28 +8,41 @@ import { Button } from './ui/button'
 const taskbar = [
     {
         id: 1,
-        name: "Bank Account Details"
+        name: "Bank Account Details",
+        link: "/dashboard/customerDashboard/bankAccountDetails"
     },
     {
         id: 2,
-        name: "Transaction Details"
+        name: "Add Bank details",
+        link: "/dashboard/customerDashboard/addBankDetails"
+
     },
     {
         id: 3,
-        name: "Apply for Loan"
+        name: "Transaction Details",
+        link: "/dashboard/customerDashboard/transactionDetails"
     },
     {
         id: 4,
-        name: "Pay Loan"
+        name: "Apply for Loan",
+        link: "/dashboard/customerDashboard/applyForLoan"
     },
     {
         id: 5,
-        name: "Deposit"
+        name: "Pay Loan",
+        link: "/dashboard/customerDashboard/payLoan"
     },
     {
         id: 6,
-        name: "Withdraw"
+        name: "Deposit",
+        link: "/dashboard/customerDashboard/deposit"
     },
+    {
+        id: 7,
+        name: "Withdraw",
+        link: "/dashboard/customerDashboard/withdraw"
+    },
+
 
 ]
 
@@ -37,7 +50,7 @@ const CustomerTaskbar = () => {
 
 
     return (
-        <div className=' flex flex-col h-screen my-auto justify-center items-center'>
+        <div className=' flex flex-col h-screen my-auto justify-center items-center border-r-2'>
             {/* 
         1. bank account details
         2. transaction details ->contains history of each transaction
@@ -47,17 +60,14 @@ const CustomerTaskbar = () => {
         6. withdraw -> with customer_id provided , amount to be deducted, -> it will deduct amount from account balance
       
       */}
-            <div>
-                <h1 className='top-0 w-fit rounded-full'> O-TRANSAC</h1>
 
-            </div>
             <div>
                 <ul className='flex flex-col items'>
                     {
                         taskbar.map((task) => {
                             return (
                                 <li key={task.id} className='my-2 p-4 '>
-                                    <Link href="/"><Button>{task.name}</Button></Link>
+                                    <Link href={task.link}><Button>{task.name}</Button></Link>
                                 </li>
                             )
                         })

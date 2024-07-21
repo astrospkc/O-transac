@@ -24,6 +24,8 @@ export default function RootLayout({
         enableSystem
         disableTransitionOnChange
       >
+        <div className=""><h1 className="  dark:text-white bg-black rounded-full p-2 font-bold text-xl w-fit ">O-Transac</h1></div>
+
         {children}
       </ThemeProvider></body>
     </html>
